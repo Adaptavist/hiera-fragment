@@ -1,0 +1,18 @@
+---
+
+one:
+  two: 'two'
+  three: 'three'
+  four:
+    - 1
+    - 2
+    - 3:
+      foo: 'baz'
+
+test: {}
+
+
+str: 'one'
+
+partial:
+  key: 'value'

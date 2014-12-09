@@ -1,0 +1,23 @@
+---
+:backends:
+  - fragment
+  - yaml
+
+:hierarchy:
+  - source
+
+:yaml:
+  :datadir: ./test/output
+
+:logger: console
+
+:fragment:
+  :datadir: ./test/fragment
+  :extensions:
+    - yaml
+    - eyaml
+  :inputdirs:
+    - ./test/input
+  :fragments:
+    - source
+    - foo

@@ -1,0 +1,20 @@
+---
+
+one:
+  two: 'one'
+  three:
+    foo: 'bar'
+  four:
+    - 3:
+      foo: 'bar'
+    - 4
+
+test:
+  foo: 'bar'
+  baz: 'asd'
+
+
+str: 'a replaced value'
+
+partial:
+  key: 'a replaced value'

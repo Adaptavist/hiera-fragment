@@ -1,0 +1,8 @@
+---
+
+one:
+  two: 'one'
+  three:
+    foo: 'bar'
+  four:
+    - 5
