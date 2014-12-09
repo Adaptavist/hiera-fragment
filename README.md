@@ -20,6 +20,8 @@ Install:
 * `:fragments` Array of fragments, specified in the same way as `:hierarchy`
 * `:destdir` Directory to ouput modified files to. Defaults to `:yaml[:datadir]`
 
+Only YAML (and eyaml) is currently supported
+
 Example `hiera.yaml` file
 
     ---
@@ -45,4 +47,17 @@ Example `hiera.yaml` file
       :fragments:
         - source
         - foo
+
+
+Source file:
+
+    ---
+    key: 'value'
+
+Fragment file
+
+    ---
+    key: 'replaced value'
+
+`hiera -c hiera.yaml key` will output 'replaced value'
 
