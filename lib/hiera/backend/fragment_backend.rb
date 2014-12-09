@@ -1,4 +1,4 @@
-require 'hiera/preprocess'
+require 'hiera/fragment'
 require 'fileutils'
 
 class Hiera
@@ -47,13 +47,12 @@ class Hiera
       end
 
       def self.merge_input(fragments, glob_pattern, input_dirs)
-        fragment = HieraFragment.new
         input_dirs.each do |input_dir|
           debug "Searching for files in #{input_dir} using pattern #{glob_pattern}"
           path_join_glob(input_dir, glob_pattern).each do |yaml_file|
             debug "Processing #{yaml_file}"
 
-            yaml = fragment.merge_files(yaml_file, fragments)
+            yaml = HieraFragment::merge_files(yaml_file, fragments)
             yield yaml_file, input_dir, yaml
           end
         end

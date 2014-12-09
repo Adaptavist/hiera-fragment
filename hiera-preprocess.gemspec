@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hiera/fragment/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'hiera-fragment'
-  spec.version       = Hiera::Fragment::VERSION
+  spec.version       = '0.0.1'
   spec.authors       = ['Jon Mort']
   spec.email         = ['jmort@adaptavist.com']
   spec.summary       = %q{Merges YAML fragments into YAML documents}
