@@ -1,6 +1,6 @@
 # Hiera::Fragment
 
-The hiera-fragment gem uses deep-merge to merge YAML files together to produce output for Hiera. It is intended to allow
+The hiera-fragment gem uses a custom algorithm to merge YAML files together to produce output for Hiera. It is intended to allow
 secrets to be specified in separate files (eyaml supported). It also supports replacement of fragments of YAML which
 should result in a reduction of size of the configuration for Hiera
 

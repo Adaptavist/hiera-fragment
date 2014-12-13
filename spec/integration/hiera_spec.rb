@@ -17,6 +17,10 @@ RSpec.describe Hiera do
         value = hiera.lookup('partial', nil, [])
         expect(value['key']).to eq('a replaced value')
       end
+      it 'has replaced a nested value' do
+        value = hiera.lookup('nested', nil, [])
+        expect(value['level1']['level2']).to eq('a replaced value')
+      end
       it 'hash lookup still works' do
         value = hiera.lookup('hash', nil, [], nil, :hash)
         expect(value['key']).to eq('value')

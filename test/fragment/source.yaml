@@ -18,3 +18,8 @@ str: 'a replaced value'
 
 partial:
   key: 'a replaced value'
+
+
+nested:
+  level1:
+    level2: 'a replaced value'

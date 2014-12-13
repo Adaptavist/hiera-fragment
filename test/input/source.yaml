@@ -23,3 +23,7 @@ hash:
 array:
   - one
   - two
+
+nested:
+  level1:
+    level2: 'value'

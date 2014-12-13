@@ -1,6 +1,5 @@
 require 'fileutils'
 require 'yaml'
-require 'deep_merge'
 require 'set'
 require 'pathname'
 
@@ -79,11 +78,26 @@ class Hiera
         end
       end
 
+      def self.replace_values(target, source)
+        if source.nil? or target.nil? or not source.is_a?(Hash) or not target.is_a?(Hash)
+          return
+        end
+        keys = source.keys.to_set
+        target.select {|key,value| keys.include? key}.each do |key, val|
+          if val.is_a?(Hash) and not val.empty?
+            replace_values val, source[key]
+          else
+            target[key] = source[key]
+          end
+        end
+      end
+
       def self.merge_files(base, overrides = [])
         result = YAML.load_file(base)
+        keys = result.keys.to_set
         [overrides].flatten.select {|file| File.readable? file}.each do |override_file|
           override = YAML.load_file(override_file)
-          result.deep_merge!(override, {:knockout_prefix => '--'})
+          replace_values result, override
         end
         result
       end
