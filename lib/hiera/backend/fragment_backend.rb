@@ -11,7 +11,14 @@ class Hiera
       end
 
       def lookup(key, scope, order_override, resolution_type)
-        nil
+        answer = nil
+        case resolution_type
+          when :array
+            answer = []
+          when :hash
+            answer = {}
+          end
+        answer
       end
 
       SUPPORTED_EXTENSIONS = %w{yaml eyaml}
