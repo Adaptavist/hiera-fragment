@@ -17,6 +17,15 @@ RSpec.describe Hiera do
         value = hiera.lookup('partial', nil, [])
         expect(value['key']).to eq('a replaced value')
       end
+      it 'hash lookup still works' do
+        value = hiera.lookup('hash', nil, [], nil, :hash)
+        expect(value['key']).to eq('value')
+      end
+
+      it 'array lookup still works' do
+        value = hiera.lookup('array', nil, [], nil, :array)
+        expect(value).to eq(['one', 'two'])
+      end
     end
   end
 end

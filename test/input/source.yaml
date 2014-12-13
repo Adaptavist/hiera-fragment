@@ -16,3 +16,10 @@ str: 'one'
 
 partial:
   key: 'value'
+
+hash:
+  key: 'value'
+
+array:
+  - one
+  - two
