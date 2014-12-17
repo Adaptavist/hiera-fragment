@@ -6,6 +6,7 @@ RSpec.describe Hiera do
     context 'with default config' do
       hiera = Hiera.new(:config => 'test/hiera.yaml')
       it 'has replaced single value' do
+        puts hiera.inspect
         value = hiera.lookup('str', nil, [])
         expect(value).to eq('a replaced value')
       end
