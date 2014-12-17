@@ -5,6 +5,7 @@
 
 :hierarchy:
   - source
+  - empty
 
 :yaml:
   :datadir: ./test/output
@@ -20,4 +21,4 @@
     - ./test/input
   :fragments:
     - source
-    - foo
+    - empty

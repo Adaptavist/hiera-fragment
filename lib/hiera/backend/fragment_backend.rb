@@ -94,6 +94,9 @@ class Hiera
 
       def self.merge_files(base, overrides = [])
         result = YAML.load_file(base)
+        if result.nil? or not result.is_a?(Hash)
+          return
+        end
         keys = result.keys.to_set
         [overrides].flatten.select {|file| File.readable? file}.each do |override_file|
           override = YAML.load_file(override_file)
