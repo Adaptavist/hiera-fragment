@@ -1,0 +1,24 @@
+---
+:backends:
+  - fragment
+  - yaml
+
+:hierarchy:
+  - source
+  - empty
+
+:yaml:
+  :datadir: ./test/output
+
+:logger: console
+
+:fragment:
+  :datadir: ./test/fragment-doesnt-exist
+  :extensions:
+    - yaml
+    - eyaml
+  :inputdirs:
+    - ./test/input
+  :fragments:
+    - source
+    - empty

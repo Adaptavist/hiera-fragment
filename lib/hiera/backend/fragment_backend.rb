@@ -36,7 +36,14 @@ class Hiera
 
         fragments = [conf[:fragments]].flatten.map do |fragment|
           path_join_glob(data_dir, "#{fragment}.{#{extensions}}")
-        end.flatten
+        end.flatten.select do |file|
+          File.file? file
+        end
+
+        if fragments.empty?
+          warn "No fragments found in #{data_dir}"
+        end
+
         dest_dir = conf[:destdir] || Config[:yaml][:datadir]
 
         input_dirs = [conf[:inputdirs]].flatten.map { |file| Pathname.new(file).realpath.to_s }
@@ -60,6 +67,10 @@ class Hiera
 
       def self.debug(message)
         Hiera.debug("[fragment_backend]: #{message}")
+      end
+
+      def self.warn(message)
+        Hiera.warn("[fragment_backend]: #{message}")
       end
 
       def self.path_join_glob(dir, file_pattern)
