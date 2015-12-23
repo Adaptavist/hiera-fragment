@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Merges YAML fragments into YAML documents}
   spec.description   = %q{Takes YAML fragments and merges them into a larger document as par of a Hiera pre-process phase}
   spec.homepage      = ''
-  spec.license       = 'Proprietary'
+  spec.license       = 'Apache-2.0'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
