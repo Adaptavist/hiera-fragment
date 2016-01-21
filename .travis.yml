@@ -1,0 +1,18 @@
+language: ruby
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      secure: qZWHYmOsvri0rm2hSB6iI/rerTS8zLSrSpuZ/tGOUegQeYiB36BkKplDYCrxCWQunhUGW5Dz3ThrxUdemTRJ/J6oKQrpNIPAjacB3v7TPSesd1Oi7oIb0t/XwSoE5X6BAYuqercXKxkUdvf/2KAPHs/ISRoQ/vVnKNS9ZOC0o8TzebdkVMwf5D7dF1qOz8oq/CPlvqX0CCR+aB5CGjNZ1lg99Z+hQDA2xdY71SwPIPEodLSTzvtGO2rrudBeAq8jyb0S/kRlCgGJvuUrYn+OISPdiJz0kc6zfz4ZGau5RLBvWUT/RBUtT87BvvuFDc7z6LODX1AYYcUR36/b377fxZVO7KGhFH3gTVUVj6lj+5Ndk3wmDKoRx5d97rVqpx0s944krMv3cth+mqKOHX4V2cIb8lXJEi7FgX5uGTe8ZB4H2wnB5zq7wu427BVO7Sy5kghBQPusjlHRZoqVzSgJD89uacUkwPtk/5yhsX3cEo00DiA9m8PVY1NJUgQtxnHha0yk2MqEYvrdg6r6Mtg201PB8UnWlVY2oVAVw0p2I5FUAypZmwzGocvNHXPuHl3+LqG1tUP857ktHzzvT5DxkGsgh2FOTJtSn+miFeSy4fZA/XXSF5c2By2swKfCmNgjIhSS/0QcCBnwz/w1rirYu7JVOuQtez6yRfQCLqCqjSc=
+    template:
+    - 'Gem - %{repository} #%{build_number} (%{build_url}) by %{author}: %{message}'
+rvm:
+- 2.0.0
+deploy:
+  provider: rubygems
+  api_key:
+    secure: X+YZ5gTNidlw4Tjo2GdO3O836+mFZvI53IsQ46w/7G/Hq/UWlwY1vKkdxMoVDld+6ikl2eHzmqER022Pp98m2G7GMhtjigw+CN9UnwSI0GfBKr96bfZAm44c3qsFe2IYx4eSeNKP432MwGn+L33Oto9srmpULt05sBQG4wnKgvON+/TjiTUum1w+RyypRnQIPAFzgkNfEKT+MjWoXcm7qsa6hH6iR2lSriGaSs9Hr7NXfoxi6lVZy7crGabxlzI2m4chRyoGH0s4V3CD0GD7I+1Qf+egmarWYlFK116P5CDx+ef9odYPosvpEgxryKN0BdV+orf5HgHpILQ/5Sg9i4C05fSveMl3+fIQPINRqll/LxAvwyrUD2+arTsRxA+ANw/eWoCFFtV9UbjajtybA96ymMcJ8Rb46BXWtn106sc9pth0MzuhXV+2mayoSa1K+x/5fACeV0frQQZ5tV07vHu4i/eLE1FuyrCF5uq35abo9nEDupNmPJDj59Sdlhzt2qP+7T4jaDgoBe0uanEvUCwjnQTLLeUxRziaU3a7w7Wus/pGi4l5cKsHuY3cfd9U1U82KAQZ32xHSr+VcsgD7Htm0jqJLwdKsaeEQA31tsxyI8UamIl5SWnW5pXQPPbV1Fqp1SSb0+foUWbTzJXAv+7aWtsT0UYC1I5b3XNUZt4=
+  gem: hiera-fragment
+  on:
+    tags: true
+    repo: Adaptavist/hiera-fragment

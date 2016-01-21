@@ -26,3 +26,5 @@ begin
 rescue LoadError
   # no ruby-lint available
 end
+
+task :default => [:build]
